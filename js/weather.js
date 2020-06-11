@@ -88,7 +88,7 @@ function geoSuccess(position) {
       $currentOption.selected = true;
     }
     cityRender(cityData);
-    koreaCityData = await getJson('../json/cityKR.list.json');
+    koreaCityData = await getJson('https://s3ubfrontend.s3.ap-northeast-2.amazonaws.com/weatherProject/json/cityKR.list.json');
     $citySelect.addEventListener('change', async ( { target }) => {
       const cityObj = koreaCityData.filter(city => city.name === target.value);
       const { coord } = cityObj[0];
